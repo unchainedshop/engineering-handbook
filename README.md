@@ -8,7 +8,7 @@ Approach for overall alignment of engineering in the unchained community
 - Form Handling: [react-hook-form](https://react-hook-form.com) ([discussion](https://github.com/unchainedshop/engineering-handbook/issues/1))
 - Internationalization:[react-intl](https://formatjs.io)
 
-## Internationalization / Localization
+## Internationalization / Localization
 
 Always use (upcoming) standards wherever possible:
 https://www.ecma-international.org/ecma-402/
@@ -120,3 +120,7 @@ export default useXXX;
 ### Eslint / Prettier
 
 TODO
+
+### Git
+
+Write commit messages in plain english, present imperative tense, starting with an uppercase letter. Generally, follow this guideline: https://chris.beams.io/posts/git-commit/
