@@ -8,7 +8,7 @@ Approach for overall alignment of engineering in the unchained community
 - Form Handling: [react-hook-form](https://react-hook-form.com) ([discussion](https://github.com/unchainedshop/engineering-handbook/issues/1))
 - Internationalization:[react-intl](https://formatjs.io)
 
-## Internationalization / Localization
+## Internationalization / Localization
 
 Always use (upcoming) standards wherever possible:
 https://www.ecma-international.org/ecma-402/
@@ -21,6 +21,25 @@ https://formatjs.io/docs/intl-messageformat
 Implementation Examples:
 
 - Do use https://formatjs.io/docs/polyfills/intl-numberformat to format currencies, don't use custom currency formatting functions.
+
+## Naming
+
+### Avoid ambiguous plurals
+
+If you have to name variables/queries that are in a collection, add -list -detail for clarity.
+
+Example:
+```js
+// Good
+
+const productDetail = {};
+const productList = [];
+
+
+// Bad
+const product = {};
+const products = [];
+```
 
 ## Patterns/Snippets
 
@@ -95,3 +114,13 @@ const useXXX = () => {
 
 export default useXXX;
 ```
+
+## Tooling
+
+### Eslint / Prettier
+
+TODO
+
+### Git
+
+Write commit messages in plain english, present imperative tense, starting with an uppercase letter. Generally, follow this guideline: https://chris.beams.io/posts/git-commit/
