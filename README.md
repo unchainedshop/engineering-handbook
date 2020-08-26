@@ -22,6 +22,25 @@ Implementation Examples:
 
 - Do use https://formatjs.io/docs/polyfills/intl-numberformat to format currencies, don't use custom currency formatting functions.
 
+## Naming
+
+### Avoid ambiguous plurals
+
+If you have to name variables/queries that are in a collection, add -list -detail for clarity.
+
+Example:
+```js
+// Good
+
+const productDetail = {};
+const productList = [];
+
+
+// Bad
+const product = {};
+const products = [];
+```
+
 ## Patterns/Snippets
 
 ### Mutation Hooks
@@ -95,3 +114,9 @@ const useXXX = () => {
 
 export default useXXX;
 ```
+
+## Tooling
+
+### Eslint / Prettier
+
+TODO
