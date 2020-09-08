@@ -119,7 +119,25 @@ export default useXXX;
 
 ### Eslint / Prettier
 
-TODO
+Using a certain Eslint / Prettier Configuration is mainly up to the community and can be different for different repositories.
+
+Of course, Prettier sees itself as a tool in it's own right outlined here (https://prettier.io/docs/en/integrating-with-linters.html) but we think it's exactly the opposite and it should be part of linting, that's why we usually run Prettier through Eslint as Plugin. This is our minimal suggested configuration:
+
+1. Eslint as tool of choice configured through .eslintrc and .editorconfig
+2. Use eslint-plugin-prettier through Eslint to format code (https://github.com/prettier/eslint-plugin-prettier)
+3. Use typescript-eslint Eslint Plugin to lint typescript (https://github.com/typescript-eslint/typescript-eslint#what-about-tslint)
+4. We extend the rules with airbnb-base (https://www.npmjs.com/package/eslint-config-airbnb-base), plugin:prettier/recommended (https://github.com/prettier/eslint-plugin-prettier) and plugin:@typescript-eslint/recommended (https://github.com/typescript-eslint/typescript-eslint)
+5. Configure plugins through .eslintrc and not through own config files like for example .prettierrc
+6. We do not depend on any global installation of Eslint or Prettier, all packages regarding linting have to be part of the devDependencies in package.json
+
+Example: https://github.com/unchainedshop/unchained/blob/master/.eslintrc
+
+Some Editors like Atom and Visual Studio Code let's you install Prettier and Eslint Plugins. Please make sure that your IDE is configured in a way that it respects the linting configuration of the author. This can be done by meeting these two requirements:
+
+1. Only Enable Prettier when there is a .prettierrc File in the project
+2. Only Enable Eslint when there is a .eslintrc File in the project
+3. Enable Fix on Save for Formatters (Eslint, Prettier)
+4. Only enable Prettier or Eslint when the node_modules needed are installed locally, never let it use global installations
 
 ### Git
 
