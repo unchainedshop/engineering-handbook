@@ -139,6 +139,23 @@ Some Editors like Atom and Visual Studio Code let's you install Prettier and Esl
 3. Enable Fix on Save for Formatters (Eslint, Prettier)
 4. Only enable Prettier or Eslint when the node_modules needed are installed locally, never let it use global installations
 
+**Visual Studio Config**
+
+Instructions to comply with VSCode:
+
+- Uninstall (or disable for workspace) the Prettier Extension
+- Install (or enable for workspace) the Eslint Extension
+- Then make sure that you have these two configs set:
+
+```
+"editor.formatOnSave": false,    
+"editor.codeActionsOnSave": {        
+  "source.fixAll": true    
+},
+```
+
+Yes, `editor.formatOnSave` should be set to false.
+
 ### Git
 
 Write commit messages in plain english, present imperative tense, starting with an uppercase letter. Generally, follow this guideline: https://chris.beams.io/posts/git-commit/
