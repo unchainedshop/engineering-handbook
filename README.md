@@ -22,6 +22,37 @@ Implementation Examples:
 
 - Do use https://formatjs.io/docs/polyfills/intl-numberformat to format currencies, don't use custom currency formatting functions.
 
+## Configuration
+
+Please don't invent configuration files (.rc, .config.json, or equivalent). All environment specific configuration should be stored in environment variables (https://12factor.net)
+
+And especially for Node.js: Don't read process.env in functions, always load it at root level of a file because reading from process.env is blocking: 
+- https://stackoverflow.com/questions/45789919/is-reading-and-writing-process-env-values-synchronous#48828102
+- https://github.com/nodejs/node/issues/3104
+
+So instead of:
+
+```
+  function() {
+     // read
+     if (process.env.NODE_ENV...
+  }
+```
+
+Do:
+
+```
+
+import ...
+
+const { NODE_ENV } = process.env;
+
+  function() {
+     // read
+     if (NODE_ENV...
+  }
+
+```
 ## Naming
 
 ### Avoid ambiguous plurals
